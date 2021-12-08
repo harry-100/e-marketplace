@@ -1,4 +1,3 @@
-import { Add, Remove } from "@material-ui/icons";
 import styled from "styled-components";
 import Announcement from "../components/Announcement";
 import Footer from "../components/Footer";
@@ -72,7 +71,6 @@ const Details = styled.div`
 const ProductName = styled.span``;
 
 const ProductId = styled.span``;
-const ProductSize = styled.span``;
 
 const PriceDetail = styled.div`
   flex: 1;
@@ -88,10 +86,6 @@ const ProductAmountContainer = styled.div`
   margin-bottom: 20px;
 `;
 
-const ProductAmount = styled.div`
-  font-size: 24px;
-  margin: 5px;
-`;
 
 const ProductPrice = styled.div`
   font-size: 30px;
@@ -148,7 +142,6 @@ const Cart = () => {
           <TopButton>CONTINUE SHOPPING</TopButton>
           <TopTexts>
             <TopText>Shopping Bag(2)</TopText>
-            <TopText>Your Wishlist (0)</TopText>
           </TopTexts>
           <TopButton type="filled">CHECKOUT NOW</TopButton>
         </Top>
@@ -164,17 +157,10 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b> 93813718293
                   </ProductId>
-                  <ProductSize>
-                    <b>Size:</b> 37.5
-                  </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>2</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
+                <ProductAmountContainer></ProductAmountContainer>
                 <ProductPrice>$ 30</ProductPrice>
               </PriceDetail>
             </Product>
@@ -189,17 +175,10 @@ const Cart = () => {
                   <ProductId>
                     <b>ID:</b> 93813718293
                   </ProductId>
-                  <ProductSize>
-                    <b>Size:</b> M
-                  </ProductSize>
                 </Details>
               </ProductDetail>
               <PriceDetail>
-                <ProductAmountContainer>
-                  <Add />
-                  <ProductAmount>1</ProductAmount>
-                  <Remove />
-                </ProductAmountContainer>
+                <ProductAmountContainer></ProductAmountContainer>
                 <ProductPrice>$ 20</ProductPrice>
               </PriceDetail>
             </Product>
