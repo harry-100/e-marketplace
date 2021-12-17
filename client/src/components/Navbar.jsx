@@ -1,4 +1,5 @@
 import React from "react";
+import { NavLink } from "react-router-dom";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import styled from "styled-components";
@@ -75,10 +76,10 @@ const Navbar = () => {
 
         <Right>
           <>
-            <MenuItem>Collections</MenuItem>
-            <MenuItem>My Garage</MenuItem>
-            <MenuItem>About Us</MenuItem>
-            <MenuItem>Login/SignUp</MenuItem>
+            <MenuItem><NavLink to="/collections">Collections</NavLink></MenuItem>
+            <MenuItem><NavLink to="/myGarage">My Garage</NavLink></MenuItem>
+            <MenuItem><NavLink to="/about">About Us</NavLink></MenuItem>
+            <MenuItem><NavLink to="/login">Login/SignUp</NavLink></MenuItem>
             <MenuItem>
               <Badge badgeContent={4} color="primary">
                 <ShoppingCartOutlined />
