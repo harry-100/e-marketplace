@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { mobile } from "../responsive";
+import { useState, useRef } from "react";
 
 const Container = styled.div`
   width: 100vw;
@@ -58,6 +59,7 @@ const Link = styled.a`
 `;
 
 const Login = () => {
+  
   return (
     <Container>
       <Wrapper>
@@ -77,5 +79,4 @@ const Login = () => {
     </Container>
   );
 };
-
 export default Login;
