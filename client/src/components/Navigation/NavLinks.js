@@ -78,7 +78,12 @@ const NavLinks = (props) => {
 
         <Right>
           <MenuItem>
-            {" "}
+
+            <NavLink to="/home" exact>
+              Home
+            </NavLink>
+          </MenuItem>
+          <MenuItem>
             <NavLink to="/collections" exact>
               Collections
             </NavLink>

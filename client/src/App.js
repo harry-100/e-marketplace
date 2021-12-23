@@ -11,6 +11,7 @@ import { Route, Redirect, Switch } from "react-router-dom";
 import React, { useCallback, useState } from "react";
 import Auth from "./pages/Auth";
 import { AuthContext } from "./shared/context/auth-context";
+import Collections from "./pages/Collections";
 
 const App = () => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
@@ -28,10 +29,13 @@ const App = () => {
     routes = (
       <Switch>
         <Route exact path="/">
-          <Redirect to="/collections" />
+          <Redirect to="/home" />
+        </Route>
+        <Route exact path="/home">
+          <Home />
         </Route>
         <Route exact path="/collections">
-          <Home />
+          <Collections />
         </Route>
         <Route exact path="/myGarage">
           <ProductList />
@@ -45,10 +49,13 @@ const App = () => {
     routes = (
       <Switch>
         <Route exact path="/">
-          <Redirect to="/collections" />
+          <Redirect to="/home" />
+        </Route>
+        <Route exact path="/home">
+          <Home />
         </Route>
         <Route exact path="/collections">
-          <Home />
+          <Collections />
         </Route>
         <Route exact path="/login">
           <Auth />
