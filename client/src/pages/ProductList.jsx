@@ -13,8 +13,8 @@ const Title = styled.h1`
 const ProductList = () => {
   return (
     <Container>
-      <Announcement />
-      <Navbar />
+  
+    
       <Title>Clothing</Title>
       <Products />
       <Footer />

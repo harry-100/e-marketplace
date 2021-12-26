@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useContext } from "react";
 import { NavLink } from "react-router-dom";
 import { Badge } from "@material-ui/core";
 import { ShoppingCartOutlined } from "@material-ui/icons";
 import styled from "styled-components";
-import { mobile } from "../responsive";
+import { mobile } from "../../responsive";
+import { AuthContext } from "../../shared/context/auth-context";
 
 const Logo = styled.h1`
   font-weight: bold;
@@ -66,7 +67,8 @@ const MenuItem = styled.div`
   }
 `;
 
-const Navbar = () => {
+const NavLinks = (props) => {
+  const auth = useContext(AuthContext);
   return (
     <Container>
       <Wrapper>
@@ -75,21 +77,45 @@ const Navbar = () => {
         </Left>
 
         <Right>
-          <>
-            <MenuItem><NavLink to="/collections">Collections</NavLink></MenuItem>
-            <MenuItem><NavLink to="/myGarage">My Garage</NavLink></MenuItem>
-            <MenuItem><NavLink to="/about">About Us</NavLink></MenuItem>
-            <MenuItem><NavLink to="/login">Login/SignUp</NavLink></MenuItem>
-            <MenuItem>
+          <MenuItem>
+
+            <NavLink to="/home" exact>
+              Home
+            </NavLink>
+          </MenuItem>
+          <MenuItem>
+            <NavLink to="/collections" exact>
+              Collections
+            </NavLink>
+          </MenuItem>
+          {auth.isLoggedIn && (
+          <MenuItem>
+            <NavLink to="/myGarage">My Garage</NavLink>
+          </MenuItem>
+          )}
+          {!auth.isLoggedIn && (
+          <MenuItem>
+            <NavLink to="/login">Login/ SignUp</NavLink>
+          </MenuItem>
+          )}
+          {auth.isLoggedIn && (
+          <MenuItem>
+            <button onClick={auth.logout}>LOGOUT</button>
+          </MenuItem>
+          )}
+
+          <MenuItem>
+            {" "}
+            <NavLink to="/cart">
               <Badge badgeContent={4} color="primary">
                 <ShoppingCartOutlined />
               </Badge>
-            </MenuItem>
-          </>
+            </NavLink>
+          </MenuItem>
         </Right>
       </Wrapper>
     </Container>
   );
 };
 
-export default Navbar;
+export default NavLinks;
